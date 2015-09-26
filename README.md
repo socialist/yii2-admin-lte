@@ -2,7 +2,7 @@ Admin LTE for Yii2
 ==================
 Тема Admin LTE для Yii2
 
-Уствновка
+Установка
 ------------
 
 Установка расширения с помощью [composer](http://getcomposer.org/download/).
@@ -28,7 +28,6 @@ composer require --prefer-dist socialist/yii2-admin-lte "*"
 После того, как расширение установлено, просто добавьте в нужном файле, например в начале `@views/layout/admin`  :
 
 ```php
-<<<<<<< HEAD
 <?php
 
 use socialist\adminlte\assets\AdminAsset;
@@ -77,7 +76,3 @@ return [
 + [jquery-slimscroll](http://rocha.la/jQuery-slimScroll)
 + [fastclick](https://github.com/ftlabs/fastclick)
 + [iCheck](https://github.com/fronteed/iCheck)
-
-=======
-```
->>>>>>> f4dc116a3bffebaca7cbe63f7ccd8cafe6faf4ec
