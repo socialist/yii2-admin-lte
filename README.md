@@ -1,31 +1,79 @@
 Admin LTE for Yii2
 ==================
-Admin LTE themr for Yii2
+Тема Admin LTE для Yii2
 
-Installation
+Уствновка
 ------------
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+Установка расширения с помощью [composer](http://getcomposer.org/download/).
 
-Either run
-
-```
-php composer.phar require --prefer-dist socialist/yii2-admin-lte "*"
-```
-
-or add
+Просто запустите в консоли команду
 
 ```
-"socialist/yii2-admin-lte": "*"
+composer require --prefer-dist socialist/yii2-admin-lte "*"
 ```
 
-to the require section of your `composer.json` file.
+или внесите строку
+
+```
+"socialist/yii2-admin-lte": "@dev"
+```
+
+в секцию `require` вашего файла `composer.json`.
 
 
-Usage
+Использование
 -----
 
-Once the extension is installed, simply use it in your code by  :
+После того, как расширение установлено, просто добавьте в нужном файле, например в начале `@views/layout/admin`  :
 
 ```php
-<?= \socialist\adminlte\AutoloadExample::widget(); ?>```
+<?php
+
+use socialist\adminlte\assets\AdminAsset;
+
+AdminAsset::register($this);
+
+?>```
+
+Плагины
+------
+
+По умолчанию никакие javascript плагины не подключаются, но их можно добавить в конфигурации:
+
+```php
+return [
+    // ...
+    'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'socialist\adminlte\assets\AdminAsset' => [
+                    'plugins' => [
+                        'jvectormap',
+                        'datepicker',
+                    ],
+                ],
+            ],
+        ],
+    ],
+];
+```
+
+Подгружаться плагины будут в том порядке, в котором они указаны.
+
+#### Доступные плагины ####
+
++ [jquery-ui](https://jqueryui.com/)
++ [raphael](http://raphaeljs.com/)
++ [morris](http://morrisjs.github.io/morris.js/)
++ [sparkline](http://omnipotent.net/jquery.sparkline/)
++ [jvectormap](http://jvectormap.com/)
++ [jquery-knob](https://github.com/aterrien/jQuery-Knob)
++ [moment](http://momentjs.com/)
++ [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker)
++ [datepicker](https://github.com/eternicode/bootstrap-datepicker)
++ [bootstrap3-wysihtml5](https://github.com/schnawel007/bootstrap3-wysihtml5)
++ [jquery-slimscroll](http://rocha.la/jQuery-slimScroll)
++ [fastclick](https://github.com/ftlabs/fastclick)
++ [iCheck](https://github.com/fronteed/iCheck)
+
