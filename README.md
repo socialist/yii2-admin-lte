@@ -10,7 +10,7 @@ Admin LTE for Yii2
 Просто запустите в консоли команду
 
 ```
-composer require --prefer-dist socialist/yii2-admin-lte "*"
+composer require --prefer-dist socialist/yii2-admin-lte "@dev"
 ```
 
 или внесите строку
@@ -34,7 +34,8 @@ use socialist\adminlte\assets\AdminAsset;
 
 AdminAsset::register($this);
 
-?>```
+?>
+```
 
 Плагины
 ------

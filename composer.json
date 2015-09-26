@@ -2,6 +2,7 @@
     "name": "socialist/yii2-admin-lte",
     "description": "Admin LTE themr for Yii2",
     "type": "yii2-extension",
+    "version": "0.1.2",
     "keywords": ["yii2","adminLTE","Theme","Admin"],
     "license": "MIT",
     "authors": [
