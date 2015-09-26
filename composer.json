@@ -1,0 +1,21 @@
+{
+    "name": "socialist/yii2-admin-lte",
+    "description": "Admin LTE themr for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","adminLTE","Theme","Admin"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Skripnichenko <socialist> Sergey",
+            "email": "Skripnichenko.s.a@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "socialist\\adminlte\\": ""
+        }
+    }
+}
