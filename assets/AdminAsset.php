@@ -7,18 +7,26 @@
 namespace socialist\adminlte\assets;
 
 use yii\web\AssetBundle;
+<<<<<<< HEAD
 use yii\helpers\ArrayHelper;
+=======
+>>>>>>> f4dc116a3bffebaca7cbe63f7ccd8cafe6faf4ec
 
 /**
  * @author Scripnichenko "socialist" Sergey <skripnichenko.s.a@gmail.com>
  */
 class AdminAsset extends AssetBundle
 {
+<<<<<<< HEAD
     public $sourcePath = '@bower/AdminLTE';
+=======
+    public $sourcePath = '@bower/admin-lte/dist';
+>>>>>>> f4dc116a3bffebaca7cbe63f7ccd8cafe6faf4ec
 
     public $css = [
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
         'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
+<<<<<<< HEAD
         'dist/css/AdminLTE.min.css',
         'dist/css/skins/_all-skins.min.css',
     ];
@@ -27,11 +35,22 @@ class AdminAsset extends AssetBundle
         'dist/js/app.min.js',
         'dist/js/pages/dashboard.js',
         'dist/js/demo.js',
+=======
+        'css/AdminLTE.min.css',
+        'css/skins/_all-skins.min.css',
+    ];
+
+    public $js = [
+        'js/app.min.js',
+        'js/pages/dashboard.js',
+        'js/demo.js',
+>>>>>>> f4dc116a3bffebaca7cbe63f7ccd8cafe6faf4ec
     ];
 
     public $depends = [
         'yii\bootstrap\BootstrapPluginAsset',
     ];
+<<<<<<< HEAD
 
     public $plugins = [];
 
@@ -109,4 +128,6 @@ class AdminAsset extends AssetBundle
             }
         }
     }
+=======
+>>>>>>> f4dc116a3bffebaca7cbe63f7ccd8cafe6faf4ec
 }

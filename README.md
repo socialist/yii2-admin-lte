@@ -28,6 +28,7 @@ composer require --prefer-dist socialist/yii2-admin-lte "*"
 После того, как расширение установлено, просто добавьте в нужном файле, например в начале `@views/layout/admin`  :
 
 ```php
+<<<<<<< HEAD
 <?php
 
 use socialist\adminlte\assets\AdminAsset;
@@ -77,3 +78,6 @@ return [
 + [fastclick](https://github.com/ftlabs/fastclick)
 + [iCheck](https://github.com/fronteed/iCheck)
 
+=======
+```
+>>>>>>> f4dc116a3bffebaca7cbe63f7ccd8cafe6faf4ec
