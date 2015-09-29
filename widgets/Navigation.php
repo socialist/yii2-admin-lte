@@ -82,13 +82,13 @@ class Navigation extends Widget
 			$label = Html::tag('span', $item['label']);
 			$label = $icon . ' ' . $label;
 
-			$active = ($this->route == $item['url'][0]) ? 'active' : '';
 		
 
 			if(isset($item['items'])) {
 				$ul = Html::tag('ul', $this->buildSideMenu($item['items']), ['class' => 'treeview-menu']);
 				$badge = Html::tag('i', '', ['class' => 'fa fa-angle-left pull-right']);
 				$link = Html::a($label.$badge, $item['url']);
+				$active = ($this->isChildActive($item['items'])) ? 'active' : '';
 
 				$list .= Html::tag('li', $link . $ul, ['class' => "treeview {$active}"]);
 			} else {
@@ -97,7 +97,8 @@ class Navigation extends Widget
 							: '';
 				$link = Html::a($label.$badge, $item['url']);
 
-				$active = ($active) ? ['class' => $active] : [];
+				$active = ($this->route == $item['url'][0]) ? ['class' => 'active'] : [];
+
 				$list .= Html::tag('li', $link, $active);
 			}
 		}
@@ -107,6 +108,14 @@ class Navigation extends Widget
 
 	private function isChildActive($items)
 	{
-		
+		foreach ($items as $item) {
+			if($this->route == $item['url'][0]) {
+				return true;
+			} else if(isset($item['items'])) {
+				return $this->isChildActive($item['items']);
+			}
+		}
+
+		return false;
 	}
 }
