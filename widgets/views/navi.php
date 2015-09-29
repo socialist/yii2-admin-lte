@@ -10,9 +10,9 @@
 
         <div class="navbar-custom-menu">
         	<ul class="nav navbar-nav">
-        		<?php foreach ($widgets as $widget) {
-        			echo $widget;
-        		} ?>
+        		<?php foreach ($widgets as $widget) { ?>
+        			<li><?= $widget ?></li>
+        		<?php } ?>
         	</ul>
         </div>
 	</nav>
@@ -30,5 +30,9 @@
 			</div>
 		</form>
 		<?php } ?>
+		<ul class="sidebar-menu">
+			<li class="header"><?= $sideMenuTitle ?></li>
+			<?= $sideMenuItems ?>
+		</ul>
 	</section>
 </asside>
