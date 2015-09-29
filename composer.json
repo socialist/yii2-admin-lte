@@ -13,7 +13,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "bower/adminlte": "*"
+        "bower-asset/adminlte": "*"
     },
     "autoload": {
         "psr-4": {
