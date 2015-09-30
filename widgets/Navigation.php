@@ -23,6 +23,7 @@ class Navigation extends Widget
 
 	public $searchForm = [
 		'show' => true,
+		'url'  => '/',
 	];
 
 	public $route;
