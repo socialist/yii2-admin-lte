@@ -77,3 +77,7 @@ return [
 + [jquery-slimscroll](http://rocha.la/jQuery-slimScroll)
 + [fastclick](https://github.com/ftlabs/fastclick)
 + [iCheck](https://github.com/fronteed/iCheck)
+
+
+**[Доступные виджеты](https://github.com/socialist/yii2-admin-lte/blob/master/docs/widgets.md)**
+
