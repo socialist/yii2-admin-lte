@@ -21,15 +21,19 @@ class Navigation extends Widget
 
 	public $navbarWidgets = [];
 
+	public $user = [];
+
 	public $searchForm = [
-		'show' => true,
-		'url'  => '/',
+		'show'  => true,
+		'url'   => '/',
+		'label' => 'Search...'
 	];
 
 	public $route;
 	public $params;
 
 	protected $defaultFontIcon = 'circle-o';
+	protected $assetsUrl;
 	
 	public function init()
 	{
@@ -52,6 +56,11 @@ class Navigation extends Widget
 		if(!isset($this->sideMenu['title'])) {
 			$this->sideMenu['title'] = 'MAIN NAVIGATION';
 		}
+
+		if(count($this->user) > 0) {
+			$this->assetsUrl = Yii::$app->assetManager->getBundle('socialist\adminlte\assets\AdminAsset')->baseUrl;
+			$this->user['avatarUrl'] = (empty($this->user['avatarUrl'])) ? $this->assetsUrl . '/dist/img/avatar04.png' : $this->user['avatarUrl'];
+		}
 	}
 
 	public function run()
@@ -62,6 +71,7 @@ class Navigation extends Widget
 			'searchForm'    => $this->searchForm,
 			'sideMenuTitle' => $this->sideMenu['title'],
 			'sideMenuItems' => $this->buildSideMenu($this->sideMenu['items']),
+			'user'			=> $this->user,
 		]);
 	}
 

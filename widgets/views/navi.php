@@ -11,7 +11,11 @@
         <div class="navbar-custom-menu">
         	<ul class="nav navbar-nav">
         		<?php foreach ($widgets as $widget) { ?>
+        			<?php if(preg_match("/^<li /", $widget)) { ?>
+        			<?= $widget ?>
+        			<?php } else { ?>
         			<li><?= $widget ?></li>
+        			<?php } ?>
         		<?php } ?>
         	</ul>
         </div>
@@ -20,6 +24,17 @@
 
 <asside class="main-sidebar">
 	<section class="sidebar">
+
+	<?php if(count($user) > 0) {?>
+		<div class="user-panel">
+			<div class="pull-left image"><img class="img-circle" src="<?= $user['avatarUrl'] ?>" alt="<?= $user['username'] ?>"></div>
+			<div class="pull-left info">
+				<p><?= $user['username'] ?></p>
+				<a href="#"><i class="fa fa-circle text-success"></i> онлайн</a>
+			</div>
+		</div>
+	<?php } ?>
+
 		<?php if($searchForm['show']) { ?>
 		<form action="<?= $searchForm['url'] ?>" method="get" class="sidebar-form">
 			<div class="input-group">
