@@ -22,6 +22,6 @@
         }
     },
     "extra": {
-        "bootstrap": "socialist\\adminlte\\bootstrap\\Bootstrap"
+        "bootstrap": "socialist\\adminlte\\Bootstrap"
     }
 }

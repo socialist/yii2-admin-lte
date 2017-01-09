@@ -6,7 +6,7 @@
  * Time: 16:11
  */
 
-namespace socialist\adminlte\bootstrap;
+namespace socialist\adminlte;
 
 
 use yii\base\Application;
