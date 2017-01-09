@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist socialist/yii2-admin-lte "*"
+php composer.phar require --prefer-dist socialist/yii2-admin-lte "@dev"
 ```
 
 or add
 
 ```
-"socialist/yii2-admin-lte": "*"
+"socialist/yii2-admin-lte": "@dev"
 ```
 
 to the require section of your `composer.json` file.
