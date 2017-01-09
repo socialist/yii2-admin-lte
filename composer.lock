@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce47bf7abb00c916fc0d8d2de2605e24",
+    "content-hash": "a6b00fea83fc0402e7a321e5c4bff625",
     "packages": [
         {
             "name": "bower-asset/adminlte",
