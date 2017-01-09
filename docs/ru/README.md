@@ -96,5 +96,5 @@ return [
 Доступные виджеты
 -----------------
 
-[Виджеты](https://github.com/socialist/yii2-admin-lte/blob/master/docs/widgets.md)
+[Виджеты](https://github.com/socialist/yii2-admin-lte/blob/master/docs/ru/widgets.md)
 
