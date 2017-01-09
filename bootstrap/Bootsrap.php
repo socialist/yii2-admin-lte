@@ -14,7 +14,7 @@ use yii\base\BootstrapInterface;
 use yii\helpers\VarDumper;
 use yii\log\Logger;
 
-class Boostrap extends BootstrapInterface
+class Bootstrap implements BootstrapInterface
 {
     public function bootstrap($app)
     {
