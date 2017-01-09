@@ -10,7 +10,7 @@
 use socialist\adminlte\widgets\Navigation;
 ```
 
-В `<body>` нужно добавить классы `hold-transition skin-blue`
+В `<body>` нужно добавить классы `hold-transition skin-blue sidebar-mini`
 
 ```php
 <?= Navigation::widget() ?>
