@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
 class AdminAsset extends AssetBundle
 {
 
-    public $sourcePath = '@bower/AdminLTE';
+    public $sourcePath = '@bower/adminlte';
 
     public $css = [
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',

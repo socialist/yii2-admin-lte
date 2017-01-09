@@ -37,6 +37,20 @@ AdminAsset::register($this);
 ?>
 ```
 
+Или можно заменить стандартный layout в настройках приложения:
+
+```php
+<?php
+return [
+    // ...
+    
+    'layout' => '@vendor/socialist/yii2-admin-lte/views/layout/main',
+    
+    // ...
+]
+?>
+```
+
 Плагины
 ------
 
