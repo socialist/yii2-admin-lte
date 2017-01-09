@@ -1,31 +1,31 @@
 Admin LTE for Yii2
 ==================
-Тема Admin LTE для Yii2
+Admin LTE themr for Yii2
 
-Установка
+Installation
 ------------
 
-Установка расширения с помощью [composer](http://getcomposer.org/download/).
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Просто запустите в консоли команду
-
-```
-composer require --prefer-dist socialist/yii2-admin-lte "@dev"
-```
-
-или внесите строку
+Either run
 
 ```
-"socialist/yii2-admin-lte": "@dev"
+php composer.phar require --prefer-dist socialist/yii2-admin-lte "*"
 ```
 
-в секцию `require` вашего файла `composer.json`.
+or add
+
+```
+"socialist/yii2-admin-lte": "*"
+```
+
+to the require section of your `composer.json` file.
 
 
-Использование
+Usage
 -----
 
-После того, как расширение установлено, просто добавьте в нужном файле, например в начале `@views/layout/admin`  :
+Once the extension is installed, simply add in the right file, for example in the beginning of the file `@views/layout/main`:
 
 ```php
 <?php
@@ -37,7 +37,7 @@ AdminAsset::register($this);
 ?>
 ```
 
-Или можно заменить стандартный layout в настройках приложения:
+Or you can replace the default layout in the app settings:
 
 ```php
 <?php
@@ -51,50 +51,7 @@ return [
 ?>
 ```
 
-Плагины
-------
+More documentations
+---
 
-По умолчанию никакие javascript плагины не подключаются, но их можно добавить в конфигурации:
-
-```php
-return [
-    // ...
-    'components' => [
-        'assetManager' => [
-            'bundles' => [
-                'socialist\adminlte\assets\AdminAsset' => [
-                    'plugins' => [
-                        'jvectormap',
-                        'datepicker',
-                    ],
-                ],
-            ],
-        ],
-    ],
-];
-```
-
-Подгружаться плагины будут в том порядке, в котором они указаны.
-
-#### Доступные плагины ####
-
-+ [jquery-ui](https://jqueryui.com/)
-+ [raphael](http://raphaeljs.com/)
-+ [morris](http://morrisjs.github.io/morris.js/)
-+ [sparkline](http://omnipotent.net/jquery.sparkline/)
-+ [jvectormap](http://jvectormap.com/)
-+ [jquery-knob](https://github.com/aterrien/jQuery-Knob)
-+ [moment](http://momentjs.com/)
-+ [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker)
-+ [datepicker](https://github.com/eternicode/bootstrap-datepicker)
-+ [bootstrap3-wysihtml5](https://github.com/schnawel007/bootstrap3-wysihtml5)
-+ [jquery-slimscroll](http://rocha.la/jQuery-slimScroll)
-+ [fastclick](https://github.com/ftlabs/fastclick)
-+ [iCheck](https://github.com/fronteed/iCheck)
-
-
-Доступные виджеты
------------------
-
-[Виджеты](https://github.com/socialist/yii2-admin-lte/blob/master/docs/widgets.md)
-
+[Russian](https://github.com/socialist/yii2-admin-lte/blob/master/docs/ru/README.md)
