@@ -14,7 +14,7 @@ class UserMenu extends Widget
 {
 	/**
 	 * app\models\User должен быть унаследован от socialist\adminlte\components\User
-	 * @var socialist\adminlte\components\User
+	 * @var \socialist\adminlte\base\User
 	 */
 	public $user;
 
@@ -62,7 +62,7 @@ class UserMenu extends Widget
 
 	protected function getMenu()
 	{
-		return (Yii::$app->user->isGuest) ? $this->guestMenu() : $this->userMenu();
+		return ($this->user->getPermition()) ? $this->guestMenu() : $this->userMenu();
 	}
 
 	protected function guestMenu()

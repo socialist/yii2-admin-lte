@@ -20,5 +20,8 @@
         "psr-4": {
             "socialist\\adminlte\\": ""
         }
+    },
+    "extra": {
+        "bootstrap": "socialist\\adminlte\\bootstrap\\Bootstrap"
     }
 }

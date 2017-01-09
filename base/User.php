@@ -1,6 +1,6 @@
 <?php
 
-namespace socialist\adminlte\components\User;
+namespace socialist\adminlte\base;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -12,7 +12,7 @@ abstract class User extends ActiveRecord
 {
     /**
      * Метод должен собирать и возвращать все нужные данные о пользователе
-     * @return Array Массив данных  о пользователе
+     * @return array Массив данных  о пользователе
      */
     public function getUserData()
     {
@@ -43,5 +43,10 @@ abstract class User extends ActiveRecord
     public function getCreateTime()
     {
     	return '';
+    }
+
+    public function getPermition()
+    {
+        return Yii::$app->getUser()->isGuest;
     }
 }
