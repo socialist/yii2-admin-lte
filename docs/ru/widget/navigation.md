@@ -24,11 +24,11 @@ use socialist\adminlte\widgets\Navigation;
 
 ```php
 <?= Navigation::widget([
-    'logoText' = [
+    'logoText' => [
 			'logoLg'   => Yii::$app->name,
 			'logoMini' => substr(Yii::$app->name, 0, 1),
 		],
-    ...
+    // ...
 ]); ?>
 ```
 
@@ -74,7 +74,7 @@ use yii\bootstrap\Nav;
 ```php
 <?= Navigation::widget([
     
-    ...
+    // ...
 
     'searchForm' => [
     	'show'   => true, 				// показывать или не показывать поле поиска.
@@ -84,7 +84,7 @@ use yii\bootstrap\Nav;
     	'label'  => 'Поиск...',			// Placeholder
     ]
 
-    ...
+    // ...
 ]); ?>
 ```
 
@@ -101,7 +101,7 @@ use yii\bootstrap\Nav;
 
 ```php
 <?= Navigation::widget([
-    ...
+    // ...
 
 
     'sideMenu' => [
@@ -140,7 +140,7 @@ use yii\bootstrap\Nav;
         ]
     ],
 
-    ...
+    // ...
 ]); ?>
 ```
 

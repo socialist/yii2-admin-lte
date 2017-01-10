@@ -5,6 +5,7 @@ use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\helpers\VarDumper;
 
 /**
  * 
@@ -62,7 +63,7 @@ class UserMenu extends Widget
 
 	protected function getMenu()
 	{
-		return ($this->user->getPermition()) ? $this->guestMenu() : $this->userMenu();
+		return ($this->user->getPermition()) ? $this->userMenu() : $this->guestMenu();
 	}
 
 	protected function guestMenu()

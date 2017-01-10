@@ -44,11 +44,41 @@ AdminAsset::register($this);
 return [
     // ...
     
-    'layout' => '@vendor/socialist/yii2-admin-lte/views/layout/main',
+    'layout' => '@adminlte/layout/main',
     
     // ...
 ]
 ?>
+```
+
+Конфигурация расширения
+-----------
+
+Сконфигурировать расширение можно несколькими способами:
+
+Через параметры приложения (в файле ``` config/params.php ```):
+```php
+<?php
+
+return [
+    // ...
+    
+    'adminlte' => [
+        // Здесь указать параметры расширения
+    ]
+    
+    // ...
+];
+```
+
+Указать параметры в отдельном файле ``` @app/config/adminlte.php ```:
+
+```php
+<?php
+
+return [
+    // Здесь указать параметры расширения
+];
 ```
 
 Плагины
@@ -57,20 +87,17 @@ return [
 По умолчанию никакие javascript плагины не подключаются, но их можно добавить в конфигурации:
 
 ```php
+<?php
+
 return [
     // ...
-    'components' => [
-        'assetManager' => [
-            'bundles' => [
-                'socialist\adminlte\assets\AdminAsset' => [
-                    'plugins' => [
-                        'jvectormap',
-                        'datepicker',
-                    ],
-                ],
-            ],
-        ],
+    
+    'plugins' => [
+        'jvectormap',
+        'datepicker',
     ],
+    
+    // ...
 ];
 ```
 

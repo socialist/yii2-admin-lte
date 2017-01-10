@@ -1,3 +1,7 @@
+<?php
+/* @val $this \yii\web\View */
+use yii\bootstrap\Html;
+?>
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?= $avatar ?>" class="user-image" alt="User Image">
@@ -28,7 +32,14 @@
                       <a href="<?= $profileLink ?>" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="<?= $signOutLink ?>" class="btn btn-default btn-flat">Sign out</a>
+                      <?= Html::beginForm($signOutLink, 'post') ?>
+                        <?=
+                        Html::submitButton(
+                            Yii::t('app', 'Sign out'),
+                            ['class' => 'btn btn-default btn-flat logout']
+                        )
+                        ?>
+                      <?= Html::endForm() ?>
                     </div>
                   </li>
                 </ul>

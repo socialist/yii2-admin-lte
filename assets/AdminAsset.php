@@ -6,6 +6,7 @@
 
 namespace socialist\adminlte\assets;
 
+use socialist\adminlte\base\Config;
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
 
@@ -93,8 +94,7 @@ class AdminAsset extends AssetBundle
 
     public function init()
     {
-        $plugins = array_reverse($this->plugins);
-        foreach ($plugins as $plugin) {
+        foreach (Config::get('plugins') as $plugin) {
             if(array_key_exists($plugin, $this->pluginsList)) {
                 $pluginFiles = $this->pluginsList[$plugin];
 

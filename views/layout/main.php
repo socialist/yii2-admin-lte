@@ -27,64 +27,18 @@ AdminAsset::register($this);
     <body class="hold-transition skin-blue sidebar-mini">
     <?php $this->beginBody() ?>
     <div class="wrapper">
-        <?php
-        $menuItems = []; /*[
-            ['label' => 'Home', 'url' => ['/site/index']],
-        ];
-        if (!Yii::$app->user->can(AdminRbac::PERMISSION_ADMIN_PANEL)) {
-            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-        } else {
-            $menuItems = '<li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">' . Yii::$app->user->identity->username . '</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  ' . Yii::$app->user->identity->username . ' - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>';
-        }*/
-        ?>
         <?= Navigation::widget([
             'logoText' => [
                 'logoLg' => Yii::$app->name,
                 'logoMini' => substr(Yii::$app->name, 0, 1),
             ],
-            /*'navbarWidgets' => [
-                $menuItems
-            ],*/
+            'navbarWidgets' => [
+                \socialist\adminlte\widgets\navbar\UserMenu::widget([
+                    'user' => \socialist\adminlte\base\Config::get('user'),
+                    'signInUrl' => ['/site/login'],
+                    'signOutUrl' => ['/site/logout']
+                ])
+            ],
             'sideMenu' => [
                 'title' => Yii::t('app', 'Application Menu'),
                 'items' => [
@@ -98,6 +52,14 @@ AdminAsset::register($this);
         ]) ?>
 
         <div class="content-wrapper"><?= $content ?></div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+            <strong>Copyright &copy; 2016 <?= Html::a(Yii::$app->name, ['/']) ?>.</strong> All rights
+            reserved.
+        </footer>
     </div>
     <?php $this->endBody() ?>
     </body>
