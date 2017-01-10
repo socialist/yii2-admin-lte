@@ -39,16 +39,6 @@ AdminAsset::register($this);
                     'signOutUrl' => ['/site/logout']
                 ])
             ],
-            'sideMenu' => [
-                'title' => Yii::t('app', 'Application Menu'),
-                'items' => [
-                    [
-                        'label' => Yii::t('app', 'Dashboard'),
-                        'url' => ['/site/index'],
-                        'icon' => 'home'
-                    ]
-                ]
-            ]
         ]) ?>
 
         <div class="content-wrapper"><?= $content ?></div>

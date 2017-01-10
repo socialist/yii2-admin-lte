@@ -1,9 +1,11 @@
 <?php
 namespace socialist\adminlte\widgets;
 
+use socialist\adminlte\base\Config;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
+use yii\helpers\VarDumper;
 
 
 /**
@@ -21,7 +23,7 @@ class Navigation extends Widget
 
 	public $navbarWidgets = [];
 
-	public $user = [];
+	public $user;
 
 	public $searchForm = [
 		'show'  => true,
@@ -53,13 +55,20 @@ class Navigation extends Widget
 			];
 		}
 
+        if (count($this->sideMenu) == 0) {
+            $this->sideMenu = Config::get('sideMenu');
+        }
+
 		if(!isset($this->sideMenu['title'])) {
 			$this->sideMenu['title'] = 'MAIN NAVIGATION';
 		}
 
-		if(count($this->user) > 0) {
+        $user = Config::get('user');
+        if($user) {
+            $this->user['username'] = $user->getUsername();
+            $avatar = $user->getAvatar();
 			$this->assetsUrl = Yii::$app->assetManager->getBundle('socialist\adminlte\assets\AdminAsset')->baseUrl;
-			$this->user['avatarUrl'] = (empty($this->user['avatarUrl'])) ? $this->assetsUrl . '/dist/img/avatar04.png' : $this->user['avatarUrl'];
+			$this->user['avatarUrl'] = (empty($avatar)) ? $this->assetsUrl . '/dist/img/avatar04.png' : $avatar;
 		}
 	}
 
