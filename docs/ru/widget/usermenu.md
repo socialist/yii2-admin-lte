@@ -92,3 +92,48 @@ class User extends socialist\adminlte\base\User
 }
 
 ```
+
+Параметры
+---
+
+##### user
+**defaul:** `\socialist\adminlte\base\User`
+**description:** Класс пользователя.
+
+По умолчанию используется класс `\socialist\adminlte\base\User` или из [конфигурации расширения](https://github.com/socialist/yii2-admin-lte/blob/master/docs/ru/README.md)
+Но можно указать и в параметрах виджета
+
+##### signInUrl
+**default:** `['/user/login']`
+
+**description:** Адрес страницы авторизации
+
+##### signInLabel
+**default:** `'Sign in'`
+
+**description:** Текст ссылки на страницу авторизации
+
+##### signUpUrl
+**default:** `['/user/signup']`
+
+**description:** Адрес страницы регистрации
+
+##### signUpLabel
+**default:** `'Sign up'`
+
+**description:** Текст сыылки на страницу регистрации
+
+##### profileUrl
+**default:** `['user/profile']`
+
+**description:** Адрес страницы профиля пользователя
+
+##### signOutUrl
+**default:** `['/user/logout']`
+
+**description:** Адрес страницы выхода
+
+##### canRegister
+**default:** `true`
+
+**description:** Показывать ли ссылку на страницу регистрации

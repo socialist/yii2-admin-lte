@@ -44,7 +44,7 @@ Or you can replace the default layout in the app settings:
 return [
     // ...
     
-    'layout' => '@vendor/socialist/yii2-admin-lte/views/layout/main',
+    'layout' => '@vendor/adminlte/layout/main',
     
     // ...
 ]

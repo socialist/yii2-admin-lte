@@ -34,7 +34,7 @@ AdminAsset::register($this);
             ],
             'navbarWidgets' => [
                 \socialist\adminlte\widgets\navbar\UserMenu::widget([
-                    'user' => \socialist\adminlte\base\Config::get('user'),
+//                    'user' => \socialist\adminlte\base\Config::get('user'),
                     'signInUrl' => ['/site/login'],
                     'signOutUrl' => ['/site/logout']
                 ])
@@ -54,9 +54,6 @@ AdminAsset::register($this);
         <div class="content-wrapper"><?= $content ?></div>
 
         <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                <b>Version</b> 2.3.8
-            </div>
             <strong>Copyright &copy; 2016 <?= Html::a(Yii::$app->name, ['/']) ?>.</strong> All rights
             reserved.
         </footer>

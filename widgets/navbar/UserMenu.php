@@ -1,6 +1,8 @@
 <?php
 namespace socialist\adminlte\widgets\navbar;
 
+use socialist\adminlte\base\Config;
+use socialist\adminlte\base\User;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
@@ -46,10 +48,12 @@ class UserMenu extends Widget
 
 	public function init()
 	{
-		if($this->user) {
-			$this->userData = $this->user->getUserData();
-			$this->avatar = $this->user->getAvatar();
+		if(!$this->user) {
+			$this->user = ($user = Config::get('user')) ? $user
+                : User::findOne(Yii::$app->getUser()->getId());
 		}
+        $this->userData = $this->user->getUserData();
+        $this->avatar = $this->user->getAvatar();
 
 
 		$this->assetsUrl = Yii::$app->assetManager->getBundle('socialist\adminlte\assets\AdminAsset')->baseUrl;
