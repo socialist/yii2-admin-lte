@@ -98,6 +98,7 @@ class User extends socialist\adminlte\base\User
 
 ##### user
 **defaul:** `\socialist\adminlte\base\User`
+
 **description:** Класс пользователя.
 
 По умолчанию используется класс `\socialist\adminlte\base\User` или из [конфигурации расширения](https://github.com/socialist/yii2-admin-lte/blob/master/docs/ru/README.md)
