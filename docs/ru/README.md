@@ -10,13 +10,13 @@ Admin LTE for Yii2
 Просто запустите в консоли команду
 
 ```
-composer require --prefer-dist socialist/yii2-admin-lte "@dev"
+composer require --prefer-dist socialist/yii2-admin-lte "*"
 ```
 
 или внесите строку
 
 ```
-"socialist/yii2-admin-lte": "@dev"
+"socialist/yii2-admin-lte": "*"
 ```
 
 в секцию `require` вашего файла `composer.json`.
