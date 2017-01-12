@@ -96,6 +96,25 @@ class User extends socialist\adminlte\base\User
 Параметры
 ---
 
+Все параметры можно указать в [конфигурации](https://github.com/socialist/yii2-admin-lte/blob/master/docs/ru/README.md)
+ расширения с ключем `userMenu`.
+ 
+```php
+<?php
+
+return [
+    // ...
+    
+    'userMenu' => [
+        'signOutUrl' => 'Logout',
+    ],
+    
+    // ...
+];
+
+?>
+```
+
 ##### user
 **defaul:** `\socialist\adminlte\base\User`
 

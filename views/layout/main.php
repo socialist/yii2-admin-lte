@@ -4,9 +4,8 @@
 
 use socialist\adminlte\assets\AdminAsset;
 use socialist\adminlte\widgets\Navigation;
+use socialist\adminlte\base\Config;
 
-use yii\bootstrap\Nav;
-use common\components\Rbac as AdminRbac;
 use yii\helpers\Html;
 
 AdminAsset::register($this);
@@ -33,15 +32,18 @@ AdminAsset::register($this);
                 'logoMini' => substr(Yii::$app->name, 0, 1),
             ],
             'navbarWidgets' => [
-                \socialist\adminlte\widgets\navbar\UserMenu::widget([
-//                    'user' => \socialist\adminlte\base\Config::get('user'),
-                    'signInUrl' => ['/site/login'],
-                    'signOutUrl' => ['/site/logout']
-                ])
+                \socialist\adminlte\widgets\navbar\UserMenu::widget(Config::get('userMenu'))
             ],
         ]) ?>
 
-        <div class="content-wrapper"><?= $content ?></div>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1><?= Html::encode($this->title) ?></h1>
+            </section>
+            <div class="content">
+                <?= $content ?>
+            </div>
+        </div>
 
         <footer class="main-footer">
             <strong>Copyright &copy; 2016 <?= Html::a(Yii::$app->name, ['/']) ?>.</strong> All rights
