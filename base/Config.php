@@ -30,6 +30,8 @@ class Config
             $params = Yii::$app->params['adminlte'];
         } else if (file_exists(Yii::getAlias('@app/config/adminlte.php'))) {
             $params = include_once Yii::getAlias('@app/config/adminlte.php');
+        } else if (file_exists(Yii::getAlias('@common/config/adminlte.php'))) {
+            $params = include_once Yii::getAlias('@common/config/adminlte.php');
         }
 
         $plugins = (isset($params['plugins'])) ? $params['plugins'] : [];
