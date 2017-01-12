@@ -9,6 +9,8 @@
 namespace socialist\adminlte\base;
 
 use Yii;
+use yii\base\UnknownMethodException;
+use yii\db\Exception;
 
 class Config
 {
@@ -70,7 +72,15 @@ class Config
     {
         $user = (isset($params['userClass'])) ? $params['userClass'] : 'socialist\adminlte\base\User';
 
-        $params['user'] = $user::findOne(Yii::$app->getUser()->getId());
+        try {
+            $params['user'] = $user::findOne(Yii::$app->getUser()->getId());
+        }
+        catch(UnknownMethodException $e) {
+            Yii::error( $e->getMessage() );
+        }
+        catch (Exception $e) {
+            Yii::error($e->getMessage());
+        }
 
         return $params;
     }
