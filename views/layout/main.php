@@ -6,6 +6,9 @@ use socialist\adminlte\assets\AdminAsset;
 use socialist\adminlte\widgets\Navigation;
 use socialist\adminlte\base\Config;
 
+use yii\widgets\Breadcrumbs;
+use common\widgets\Alert;
+
 use yii\helpers\Html;
 
 AdminAsset::register($this);
@@ -39,6 +42,13 @@ AdminAsset::register($this);
         <div class="content-wrapper">
             <section class="content-header">
                 <h1><?= Html::encode($this->title) ?></h1>
+                <?= Breadcrumbs::widget([
+                    'homeLink' => false,
+                    'encodeLabels' => false,
+                    'tag' => 'ol',
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) ?>
+                <?= Alert::widget() ?>
             </section>
             <div class="content">
                 <?= $content ?>
