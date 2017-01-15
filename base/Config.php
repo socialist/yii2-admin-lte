@@ -72,7 +72,7 @@ class Config
 
     protected function addUser($params)
     {
-        $user = (isset($params['userClass'])) ? $params['userClass'] : 'socialist\adminlte\base\User';
+        $user = (isset($params['userClass'])) ? $params['userClass'] : Yii::$app->getUser()->identityClass;
 
         try {
             $params['user'] = $user::findOne(Yii::$app->getUser()->getId());
@@ -81,6 +81,9 @@ class Config
             Yii::error( $e->getMessage() );
         }
         catch (Exception $e) {
+            Yii::error($e->getMessage());
+        }
+        catch (\Exception $e) {
             Yii::error($e->getMessage());
         }
 
