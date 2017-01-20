@@ -6,17 +6,20 @@
  * Time: 18:10
  */
 
-namespace socialist\adminlte\widgets;
+namespace socialist\adminlte\box;
 
 
 use yii\base\Widget;
-use yii\helpers\Html;
+use socialist\adminlte\helper\Html;
+use Yii;
 
-class Box extends Widget
+class BoxView extends Widget
 {
     public $type = 'primary';
 
     public $header;
+
+    public $tools = [];
 
     public function init()
     {
@@ -40,6 +43,8 @@ class Box extends Widget
         }
 
         $this->header['title'] = (isset($this->header['title'])) ? $this->header['title'] : '';
+        $this->tools['class'] = isset($this->tools['class']) ? $this->tools['class'] : Tools::className();
+        $this->header['tools'] = Yii::createObject($this->tools);
 
         return $this->render('box-header', $this->header);
     }
