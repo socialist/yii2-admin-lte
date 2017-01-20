@@ -27,5 +27,18 @@ class Bootstrap implements BootstrapInterface
             Yii::setAlias('@adminlte', '@vendor/socialist/yii2-admin-lte');
             Yii::setAlias('@adminlte/layout', '@adminlte/views/layout');
         });
+
+        $this->registerTranslations();
+    }
+
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['adminlte*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@adminlte/messages',
+            'fileMap' => [
+                'adminlte' => 'adminlte.php',
+            ]
+        ];
     }
 }
