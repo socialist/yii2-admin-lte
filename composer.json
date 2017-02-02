@@ -13,7 +13,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/AdminLTE": "*"
+        "bower-asset/AdminLTE": "*",
+        "bower-asset/summernote": "*"
     },
     "autoload": {
         "psr-4": {

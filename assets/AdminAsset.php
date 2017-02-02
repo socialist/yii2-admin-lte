@@ -33,6 +33,7 @@ class AdminAsset extends AssetBundle
 
     public $depends = [
         'yii\bootstrap\BootstrapPluginAsset',
+        'yii\web\YiiAsset',
     ];
 
     public $plugins = [];
@@ -74,6 +75,10 @@ class AdminAsset extends AssetBundle
         'bootstrap3-wysihtml5' => [
             'css' => 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
             'js'  => 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
+        ],
+        'summernote' => [
+            'css' => '@vendor/summernote/dist/summernote.css',
+            'js' => '@vendor/summernote/dist/summernote.min.js',
         ],
         'jquery-slimscroll' => [
             'js' => 'plugins/slimScroll/jquery.slimscroll.min.js',
