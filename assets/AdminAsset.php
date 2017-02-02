@@ -76,10 +76,6 @@ class AdminAsset extends AssetBundle
             'css' => 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
             'js'  => 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
         ],
-        'summernote' => [
-            'css' => '@vendor/summernote/dist/summernote.css',
-            'js' => '@vendor/summernote/dist/summernote.min.js',
-        ],
         'jquery-slimscroll' => [
             'js' => 'plugins/slimScroll/jquery.slimscroll.min.js',
         ],
@@ -102,6 +98,9 @@ class AdminAsset extends AssetBundle
     {
         foreach (Config::get('plugins') as $plugin) {
             if(array_key_exists($plugin, $this->pluginsList)) {
+                if ($plugin == 'summernote') {
+                    $this->depends[] = 'socialist\adminlte\assets\SummernoteAsset';
+                }
                 $pluginFiles = $this->pluginsList[$plugin];
 
                 if(isset($pluginFiles['css'])) {
