@@ -97,10 +97,11 @@ class AdminAsset extends AssetBundle
     public function init()
     {
         foreach (Config::get('plugins') as $plugin) {
+            if ($plugin == 'summernote') {
+                $this->depends[] = 'socialist\adminlte\assets\SummernoteAsset';
+                continue;
+            }
             if(array_key_exists($plugin, $this->pluginsList)) {
-                if ($plugin == 'summernote') {
-                    $this->depends[] = 'socialist\adminlte\assets\SummernoteAsset';
-                }
                 $pluginFiles = $this->pluginsList[$plugin];
 
                 if(isset($pluginFiles['css'])) {

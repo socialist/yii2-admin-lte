@@ -17,9 +17,7 @@ class Html extends \yii\helpers\Html
         Yii::$app->view->registerJs('
             jQuery(function ($) {
                 $("#FileInput").on("change", function(e) {
-                    var value = this.value;
-                    console.log(value);
-                    $("#FileValueInput").val(value.split("\\\").pop());
+                    $("#FileValueInput").val(this.value.split("\\\").pop());
                 });
             });
         ');
