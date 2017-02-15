@@ -90,12 +90,12 @@ class Summernote extends Widget {
             jQuery(function ($) {
                 $('#{$this->elementId}').on('summernote.blur', function() {
                     var code = $('#{$this->elementId}').summernote('code');
-                    $('#{$elementId}').val(code);
+                    $('#{$elementId}').text(code);
                 });
             });
         ");
 
-        return Html::activeHiddenInput($this->model, $this->inputAttribute, ['id' => $elementId]);
+        return Html::activeTextarea($this->model, $this->inputAttribute, ['id' => $elementId, 'style' => 'display:none;']);
     }
 }
 
