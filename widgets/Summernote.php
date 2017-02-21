@@ -63,7 +63,7 @@ class Summernote extends Widget {
         $reflect = new \ReflectionClass($this);
         $props = $reflect->getProperties(\ReflectionProperty::IS_PUBLIC);
         foreach ($props as $item) {
-            if ($item->class == 'socialist\\adminlte\\widgets\\Summernote') {
+            if ($item->class == 'socialist\\adminlte\\widgets\\Summernote' && $item->name != 'model') {
                 $items[$item->name] = $this->{$item->name};
             }
         }
@@ -75,7 +75,7 @@ class Summernote extends Widget {
             });
         ');
 
-        return $input . Html::tag('div', '', ['id' => $this->elementId]);
+        return $input . Html::tag('div', $this->model->{$this->inputAttribute}, ['id' => $this->elementId]);
     }
 
     protected function initializeInput()
