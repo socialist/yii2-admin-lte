@@ -17,6 +17,8 @@ class Tools extends Object
 {
     public $template = '{collapse}{remove}';
 
+    public $collapsed = false;
+
     public $buttons = [];
 
     public $buttonOptions = [
@@ -32,7 +34,7 @@ class Tools extends Object
 
     public function initDefaultButtons()
     {
-        $this->initDefaultButton('collapse', 'minus', ['class' => ['btn', 'bg-info', 'btn-sm']]);
+        $this->initDefaultButton('collapse', ($this->collapsed) ? 'plus' : 'minus', ['class' => ['btn', 'bg-info', 'btn-sm']]);
         $this->initDefaultButton('remove', 'times', ['class' => ['btn', 'btn-sm', 'bg-danger']]);
     }
 

@@ -28,6 +28,8 @@ class BoxView extends Widget
      */
     public $background;
 
+    public $collapsed = false;
+
     /**
      * @var array of header information:
      * *title* - The title of box
@@ -59,7 +61,8 @@ class BoxView extends Widget
         $boxClasses = [
             'box', "box-{$this->type}",
             $this->background,
-            ($this->solid) ? 'box-solid' : ''
+            ($this->solid) ? 'box-solid' : '',
+            ($this->collapsed) ? 'collapsed-box' : '',
         ];
 
         $body = Html::tag('div', $content, ['class' => ['box-body']]);
