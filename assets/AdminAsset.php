@@ -16,7 +16,7 @@ use yii\helpers\ArrayHelper;
 class AdminAsset extends AssetBundle
 {
 
-    public $sourcePath = '@bower/adminlte';
+    public $sourcePath = '@vendor/almasaeed2010/adminlte';
 
     public $css = [
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
@@ -26,7 +26,7 @@ class AdminAsset extends AssetBundle
     ];
 
     public $js = [
-        'dist/js/app.min.js',
+        'dist/js/adminlte.min.js',
         //'dist/js/pages/dashboard.js',
         'dist/js/demo.js',
     ];
@@ -46,41 +46,41 @@ class AdminAsset extends AssetBundle
             'js' => 'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js',
         ],
         'morris' => [
-            'plugins/morris/morris.min.js',
+            'bower_components/morris.js/morris.min.js',
         ],
         'sparkline' => [
-            'js' => 'plugins/sparkline/jquery.sparkline.min.js',
+            'js' => 'bower_components/jquery-sparkline/dist/jquery.sparkline.min.js',
         ],
         'jvectormap' => [
-            'css' => 'plugins/jvectormap/jquery-jvectormap-1.2.2.css',
+            'css' => 'bower_components/jvectormap/jquery-jvectormap.css',
             'js'  => [
-                'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
-                'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
+                'bower_components/jvectormap/jquery-jvectormap.js',
+                'bower_components/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js',
             ],
         ],
         'jquery-knob' => [
-            'js' => 'plugins/knob/jquery.knob.js',
+            'js' => 'bower_components/jquery-knob/dist/jquery.knob.min.js',
         ],
         'moment' => [
-            'js' => 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js',
+            'js' => 'bower_components/moment/min/moment.min.js',
         ],
         'daterangepicker' => [
-            'css' => 'plugins/daterangepicker/daterangepicker-bs3.css',
-            'js'  => 'plugins/daterangepicker/daterangepicker.js',
+            'css' => 'bower_components/bootstrap-daterangepicker/daterangepicker.css',
+            'js'  => 'bower_components/bootstrap-daterangepicker/daterangepicker.js',
         ],
         'datepicker' => [
-            'css' => 'plugins/datepicker/datepicker3.css',
-            'js'  => 'plugins/datepicker/bootstrap-datepicker.js',
+            'css' => 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css',
+            'js'  => 'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
         ],
         'bootstrap3-wysihtml5' => [
             'css' => 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
             'js'  => 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
         ],
         'jquery-slimscroll' => [
-            'js' => 'plugins/slimScroll/jquery.slimscroll.min.js',
+            'js' => 'bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
         ],
         'fastclick' => [
-            'js' => 'plugins/fastclick/fastclick.min.js',
+            'js' => 'bower_components/fastclick/lib/fastclick.js',
         ],
         'iCheck' => [
             'css' => [
