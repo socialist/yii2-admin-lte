@@ -45,7 +45,7 @@
 			</div>
 		</form>
 		<?php } ?>
-		<ul class="sidebar-menu tree">
+		<ul class="sidebar-menu tree" data-widget="tree">
 			<li class="header"><?= $sideMenuTitle ?></li>
 			<?= $sideMenuItems ?>
 		</ul>
