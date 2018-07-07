@@ -10,10 +10,10 @@ namespace socialist\adminlte\box;
 
 
 use socialist\adminlte\helper\Html;
-use yii\base\Object;
+use yii\base\BaseObject;
 use Yii;
 
-class Tools extends Object
+class Tools extends BaseObject
 {
     public $template = '{collapse}{remove}';
 
